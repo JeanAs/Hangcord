@@ -1,0 +1,27 @@
+{
+  "name": "hangcord",
+  "version": "0.0.1",
+  "description": "Make your create hangman game on Discord easy",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1GPEX/Hangcord.git"
+  },
+  "keywords": [
+    "discord.js",
+    "hangman",
+    "hangcord"
+  ],
+  "author": "Kazult",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1GPEX/Hangcord/issues"
+  },
+  "homepage": "https://github.com/1GPEX/Hangcord#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  }
+}
