@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Make your create hangman game on Discord easy",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "node test.js"
   },
