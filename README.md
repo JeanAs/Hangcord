@@ -14,9 +14,12 @@ npm install hangcord
 ```js
 const Discord = require('discord.js'); // Require discord.js
 const HangmanGame = require('hangcord'); // Require HangmanGame
-const client = new Discord.Client(["MANAGE_MESSAGES"]); // Create client
+const client = new Discord.Client(); // Create client
 
-const hangman = new HangmanGame(client);
+const hangman = new HangmanGame({
+  title: 'Hangman', // Title of the embed while displaying the game. Default: Hangman
+  color: 'RANDOM' // Color of the embed. Default: RANDOM
+});
 
 // Config
 
