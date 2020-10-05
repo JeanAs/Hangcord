@@ -12,15 +12,16 @@ const letterEmojisMap = {
 }
 
 class HangmanGame {
-    constructor() {
+    constructor(options) {
         this.gameEmbed = null;
         this.inGame = false;
         this.word = "";
         this.guesssed = [];
         this.wrongs = 0;
+        this.this.options = this.options
     }
 
-    newGame(msg, options={}) {
+    newGame(msg) {
         if (this.inGame)
             return;
 
@@ -31,13 +32,13 @@ class HangmanGame {
 
 
         const embed = new Discord.MessageEmbed()
-            .setColor(options.color ? options.color : 'RANDOM')
-            .setTitle(options.title ? options.title : 'Hangman')
+            .setColor(this.options.color ? this.options.color : 'RANDOM')
+            .setTitle(this.options.title ? this.options.title : 'Hangman')
             .setDescription(this.getDescription())
             .addField('Letters Guessed', '\u200b')
             .addField("React to this message using the emojis that look like letters", "\u200b")
         
-        if(options.timestamp) embed.setTimestamp()
+        if(this.options.timestamp) embed.setTimestamp()
 
         msg.channel.send(embed).then(emsg => {
             this.gameEmbed = emsg;
@@ -66,8 +67,8 @@ class HangmanGame {
 
         if (this.inGame) {
             const editEmbed = new Discord.MessageEmbed()
-                .setColor('RANDOM')
-                .setTitle('Hangman')
+                .setColor(this.options.color ? this.options.color : 'RANDOM')
+                .setTitle(this.options.title ? this.options.title : 'Hangman')
                 .setDescription(this.getDescription())
                 .addField('Letters Guessed', this.guesssed.length == 0 ? '\u200b' : this.guesssed.join(" "))
                 .addField("React to this message using the emojis that look like letters", "\u200b")
@@ -80,8 +81,8 @@ class HangmanGame {
     gameOver(win) {
         this.inGame = false;
         const editEmbed = new Discord.MessageEmbed()
-            .setColor('RANDOM')
-            .setTitle('Hangman')
+            .setColor(this.options.color ? this.options.color : 'RANDOM')
+            .setTitle(this.options.title ? this.options.title : 'Hangman')
             .setDescription((win ? "You Wins!" : "You losses") + "\n\nThe Word was:\n" + this.word)
             .setTimestamp();
         this.gameEmbed.edit(editEmbed);
