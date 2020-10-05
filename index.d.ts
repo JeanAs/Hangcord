@@ -11,7 +11,7 @@ class HangmanGame{
   wrongs: number;
   options: optionType;
   
-  public constructor(options: optionType);
+  constructor(options: optionType);
   
   public newGame(msg: string): void;
   public makeGuess(reaction: string): any;
