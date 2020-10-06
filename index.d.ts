@@ -1,6 +1,7 @@
 interface optionType{
   title?: string,
   color?: string,
+  gameOverTitle?: string,
   timestamp?: boolean
 }
 
@@ -21,8 +22,9 @@ class HangmanGame{
   public waitForReaction(): any;
   
   public setTimestamp(): void;
-  public setEmbedColor(color: string): void;
-  public setEmbedTitle(title: string): void;
+  public setColor(color: string): void;
+  public setTitle(title: string): void;
+  public setGameOverTitle(title: string): void;
 }
 
 export default HangmanGame
