@@ -15,15 +15,14 @@ class HangmanGame {
     constructor(options) {
         this.gameEmbed = null;
         this.inGame = false;
-        this.word = "";
+        this.word = ""; 
         this.guesssed = [];
         this.wrongs = 0;
-        this.this.options = this.options
+        this.options = this.options;
     }
 
     newGame(msg) {
-        if (this.inGame)
-            return;
+        if (this.inGame) return;
 
         this.inGame = true;
         this.word = possible_words[Math.floor(Math.random() * possible_words.length)].toUpperCase();
