@@ -19,6 +19,10 @@ class HangmanGame{
   public gameOver(win: any): any;
   public getDescription(): string;
   public waitForReaction(): any;
+  
+  public setTimestamp(): void;
+  public setEmbedColor(color: string): void;
+  public setEmbedTitle(title: string): void;
 }
 
 export default HangmanGame
