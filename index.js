@@ -30,7 +30,7 @@ class HangmanGame {
         this.guesssed = [];
         this.wrongs = 0;
 
-
+ 
         const embed = new Discord.MessageEmbed()
             .setColor(this.options.color ? this.options.color : 'RANDOM')
             .setTitle(this.options.title ? this.options.title : 'Hangman')
