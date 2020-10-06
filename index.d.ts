@@ -1,6 +1,7 @@
 interface optionType{
   title?: string,
-  color?: string
+  color?: string,
+  timestamp?: boolean
 }
 
 class HangmanGame{
