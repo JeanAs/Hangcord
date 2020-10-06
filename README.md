@@ -19,7 +19,8 @@ const client = new Discord.Client(); // Create client
 const hangman = new HangmanGame({
   title: 'Hangman', // Title of the embed while displaying the game. Default: Hangman
   color: 'RANDOM', // Color of the embed. Default: RANDOM
-  timestamp: true // Will set timestamp for embeds. Default: true
+  timestamp: true, // Will set timestamp for embeds. Default: true
+  gameOverTitle: 'Game Over' // Will set the embed title of the game over embed. Default: 'Game Over'
 });
 
 // or
@@ -27,6 +28,7 @@ const hangman = new HangmanGame()
   .setEmbedTitle('Hangman') // Will set embed title
   .setEmbedColor('RANDOM') // Will set embed color
   .setTimestamp() // Will set timestamp for your embed!
+  .setGameOverTitle('Game Over') // Will set the embed title of the game over embed!
 
 // Config
 
