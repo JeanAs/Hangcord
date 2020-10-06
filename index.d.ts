@@ -12,6 +12,11 @@ class HangmanGame{
   guessed: any[];
   wrongs: number;
   options: optionType;
+
+  setTimestamp: any;
+  setTitle: any;
+  setColor: any;
+  setGameOverTitle: any;
   
   constructor(options: optionType);
   
@@ -20,11 +25,6 @@ class HangmanGame{
   public gameOver(win: any): any;
   public getDescription(): string;
   public waitForReaction(): any;
-  
-  public setTimestamp(): void;
-  public setColor(color: string): void;
-  public setTitle(title: string): void;
-  public setGameOverTitle(title: string): void;
 }
 
 export default HangmanGame
