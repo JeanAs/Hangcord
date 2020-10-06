@@ -20,6 +20,11 @@ class HangmanGame {
         this.guesssed = [];
         this.wrongs = 0;
         this.options = options;
+        
+        this.setTitle = (title) => this.options.title = title || 'Hangman'
+        this.setColor = (color) => this.options.color = color || 'RANDOM'
+        this.setTimestamp = () => this.options.timestamp = true
+        this.setGameOverTitle = (title) => this.options.gameOverTitle = title || 'Game Over'
     }
 
     newGame(msg) {
@@ -122,11 +127,6 @@ class HangmanGame {
                 this.gameOver(false);
             });
     }
-    
-    setTimestamp(){ this.options.timestamp = true }
-    setTitle(title){ this.options.title = title || 'Hangman' }
-    setColor(color){ this.options.color = color || 'RANDOM' }
-    setGameOverTitle(title){ this.options.gameOverTitle = title || 'Game Over' }
 }
 
 module.exports = HangmanGame;
