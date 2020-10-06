@@ -72,7 +72,9 @@ class HangmanGame {
                 .setDescription(this.getDescription())
                 .addField('Letters Guessed', this.guesssed.length == 0 ? '\u200b' : this.guesssed.join(" "))
                 .addField("React to this message using the emojis that look like letters", "\u200b")
-                .setTimestamp();
+            
+            if(this.options.timestamp) embed.setTimestamp()
+            
             this.gameEmbed.edit(editEmbed);
             this.waitForReaction();
         }
@@ -84,7 +86,9 @@ class HangmanGame {
             .setColor(this.options.color ? this.options.color : 'RANDOM')
             .setTitle(this.options.title ? this.options.title : 'Hangman')
             .setDescription((win ? "You Wins!" : "You losses") + "\n\nThe Word was:\n" + this.word)
-            .setTimestamp();
+        
+        if(this.options.timestamp) embed.setTimestamp()
+        
         this.gameEmbed.edit(editEmbed);
 
         this.gameEmbed.reactions.removeAll();
