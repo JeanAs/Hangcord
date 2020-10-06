@@ -1,8 +1,13 @@
 const Discord = require('discord.js'); // Require discord.js
 const HangmanGame = require('./index.js'); // Require HangmanGame
-const client = new Discord.Client(["MANAGE_MESSAGES"]); // Create client
+const client = new Discord.Client(); // Create client
 
-const hangman = new HangmanGame(client);
+const hangman = new HangmanGame({
+  title: 'Test - Hangman', // Title of the embed while displaying the game. Default: Hangman
+  color: 'RANDOM', // Color of the embed. Default: RANDOM
+  timestamp: true, // Will set timestamp for embeds. Default: true
+  gameOverTitle: 'Game Over' // Will set the embed title of the game over embed. Default: 'Game Over'
+});
 
 // Config
 
