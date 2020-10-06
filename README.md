@@ -22,6 +22,12 @@ const hangman = new HangmanGame({
   timestamp: true // Will set timestamp for embeds. Default: true
 });
 
+// or
+const hangman = new HangmanGame()
+  .setEmbedTitle('Hangman') // Will set embed title
+  .setEmbedColor('RANDOM') // Will set embed color
+  .setTimestamp() // Will set timestamp for your embed!
+
 // Config
 
 client.config = {
