@@ -12,13 +12,14 @@ const letterEmojisMap = {
 }
 
 class HangmanGame {
-    constructor(options) {
+
+    constructor(options={}) {
         this.gameEmbed = null;
         this.inGame = false;
         this.word = ""; 
         this.guesssed = [];
         this.wrongs = 0;
-        this.options = this.options;
+        this.options = options;
     }
 
     newGame(msg) {
@@ -121,6 +122,10 @@ class HangmanGame {
                 this.gameOver(false);
             });
     }
+    
+    setTimestamp(){ this.options.timestamp = true }
+    setEmbedTitle(title){ this.options.title = title || 'Hangman' }
+    setEmbedColor(color){ this.options.color = color || 'RANDOM' }
 }
 
 module.exports = HangmanGame;
