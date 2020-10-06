@@ -18,7 +18,8 @@ const client = new Discord.Client(); // Create client
 
 const hangman = new HangmanGame({
   title: 'Hangman', // Title of the embed while displaying the game. Default: Hangman
-  color: 'RANDOM' // Color of the embed. Default: RANDOM
+  color: 'RANDOM', // Color of the embed. Default: RANDOM
+  timestamp: true // Will set timestamp for embeds. Default: true
 });
 
 // Config
