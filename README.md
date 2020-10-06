@@ -25,8 +25,8 @@ const hangman = new HangmanGame({
 
 // or
 const hangman = new HangmanGame()
-  .setEmbedTitle('Hangman') // Will set embed title
-  .setEmbedColor('RANDOM') // Will set embed color
+  .setTitle('Hangman') // Will set embed title
+  .setColor('RANDOM') // Will set embed color
   .setTimestamp() // Will set timestamp for your embed!
   .setGameOverTitle('Game Over') // Will set the embed title of the game over embed!
 
