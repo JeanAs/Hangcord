@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const fs = require('fs')
 
 const possible_words = require('./words.json');
 
@@ -20,13 +21,15 @@ class HangmanGame {
         this.guesssed = [];
         this.wrongs = 0;
         this.options = options;
+        
+        this.options.words = this.options.words || possible_words;
     }
 
     newGame(msg) {
         if (this.inGame) return;
 
         this.inGame = true;
-        this.word = possible_words[Math.floor(Math.random() * possible_words.length)].toUpperCase();
+        this.word = this.options.words[Math.floor(Math.random() * this.options.words.length)].toUpperCase();
         this.guesssed = [];
         this.wrongs = 0;
 
@@ -140,6 +143,18 @@ class HangmanGame {
     
     setGameOverTitle(){
         this.options.gameOverTitle = title || 'Game Over'
+        return this
+    }
+    
+    setWords(words){
+        if(!Array.isArray(words)) throw new Error('words should be in array form')
+        this.options.words = words
+        return this
+    }
+    
+    pushWords(words){
+        if(!Array.isArray(words)) throw new Error('words should be in array form')
+        words.forEach(w => this.options.words.push(w))
         return this
     }
     
