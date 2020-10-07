@@ -20,7 +20,8 @@ const hangman = new HangmanGame({
   title: 'Hangman', // Title of the embed while displaying the game. Default: Hangman
   color: 'RANDOM', // Color of the embed. Default: RANDOM
   timestamp: true, // Will set timestamp for embeds. Default: true
-  gameOverTitle: 'Game Over' // Will set the embed title of the game over embed. Default: 'Game Over'
+  gameOverTitle: 'Game Over', // Will set the embed title of the game over embed. Default: 'Game Over'
+  words: ['word1', 'word2'] // Custom set of words. Deafult: './words.json'
 });
 
 // or
@@ -29,6 +30,8 @@ const hangman = new HangmanGame()
   .setColor('RANDOM') // Will set embed color
   .setTimestamp() // Will set timestamp for your embed!
   .setGameOverTitle('Game Over') // Will set the embed title of the game over embed!
+  .setWords(['word1', 'word2']) // Will set words
+  .pushWords(['word3', 'word4']) // Will push words to the existing list!
 
 // Config
 
@@ -62,6 +65,3 @@ client.login(client.config.token)
 ![hangman-1](/images/hangman-1.png)
 
 ![hangman-2](/images/hangman-2.png)
-
-
-
