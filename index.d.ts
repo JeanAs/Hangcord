@@ -25,6 +25,9 @@ class HangmanGame{
   public setGameOverTitle(title: string): any;
   public setColor(color: string): any;
   public setTimestamp(): any;
+
+  public setWords(words: string[]): any;
+  public pushWords(words: string[]): any;
 }
 
 export default HangmanGame
